@@ -1,7 +1,21 @@
 # SliceAgent (first review build)
 
-SliceAgent is a local-first web app for storing STL files by project and making PrusaSlicer plates. The server runs on the computer or VPS that has PrusaSlicer; a phone only needs a browser connection to that server.
+Work in progress.
 
+## Human-written intro
+Can frontier AI models adequately place items on a 3d printer build plate ? This would be useful to me, and this project is a trial to find out. The aim is a slicing assistant, which takes in STL model files (or which retrieves the appropriate files based on the conversation), and place items on a build plate(s) in a way that ensures quality, while respecting constraints of time and filament. For instance, a request I'd like to be able to make is the following:
+> I have a [SO-ARM101](https://github.com/TheRobotStudio/SO-ARM100), and I'd like to add a [LeKiwi](https://github.com/SIGRobotics-UIUC/LeKiwi/) base to it. I have a Prusa MK4S for 5 hours right now and 300g of PLA. I want to print as much as possible.
+
+Based on this request, the agent should:
+- retrieve the relevant STL files <= AI task
+- positions them on the build plate in a sliceable way, while maintaining good practices (especially orientation) <= AI task
+- uses MK4S presets to call PrusaSlicer to slice the plate.
+- based on the time and filament estimation, the agent can then add/displace/remove elements from the plate if need be, to respect the time and filament constraints.
+- the user can export the build plate as a project .3mf file to inspect it in PrusaSlicer (or other), or directly export the G-code (`.bgcode`) to print the plate
+
+In its first version, the tool takes the form of a local-first web app in Rust (following the idea that the Rust compiler's verbosity is a good feedback mechanism for a coding agent, like Codex which is being used here). The server runs on the computer or VPS that has PrusaSlicer; a phone only needs a browser connection to that server.
+
+## Machine-written technical guide to usage
 ## Run locally
 
 ```sh
