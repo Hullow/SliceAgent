@@ -15,6 +15,13 @@ Based on this request, the agent should:
 
 In its first version, the tool takes the form of a local-first web app in Rust (following the idea that the Rust compiler's verbosity is a good feedback mechanism for a coding agent, like Codex which is being used here). The server runs on the computer or VPS that has PrusaSlicer; a phone only needs a browser connection to that server.
 
+## Interface
+### Input
+![SliceAgent-v0.1.0-input.png](img/SliceAgent-v0.1.0-input.png)
+
+### Output
+![SliceAgent-v0.1.0-output.png](img/SliceAgent-v0.1.0-output.png)
+
 ## Machine-written technical guide to usage
 ## Run locally
 
