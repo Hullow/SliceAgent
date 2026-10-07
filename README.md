@@ -15,6 +15,8 @@ Based on this request, the agent should:
 
 In its first version, the tool takes the form of a local-first web app in Rust (following the idea that the Rust compiler's verbosity is a good feedback mechanism for a coding agent, like Codex which is being used here). The server runs on the computer or VPS that has PrusaSlicer; a phone only needs a browser connection to that server.
 
+Benchmarking: Orcaslicer has an [auto-orient functionality](https://github.com/orcaslicer/orcaslicer/wiki/prepare_auto_orient) that "automatically finds the optimal orientation for 3D models to minimize support requirements and improve print quality." This functionality relies on a printability score, which could be used for SliceAgent.
+
 ## Interface
 ### Input
 ![SliceAgent-v0.1.0-input.png](img/SliceAgent-v0.1.0-input.png)
